@@ -41,7 +41,7 @@ let History = {
 
     select: (action, itemData) => {
 
-      let command = `"${utools.getPath("home") + itemData.exec}" "${itemData.path}"`;
+      let command = `"${utools.getPath("home") + itemData.exec}" "${itemData.description}"`;
       console.log(command, 123)
       exec(command, (err) => {
         if (err) utools.showNotification("不是有效的可执行程序");
