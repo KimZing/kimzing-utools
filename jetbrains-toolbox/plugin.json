@@ -1,0 +1,21 @@
+{
+  "pluginName": "JetBrains Toolbox",
+  "description": "通过JetBrains Toolbox打开历史项目",
+  "author": "kimzing",
+  "homepage": "http://kimzing.com",
+  "preload": "src/preload.js",
+  "logo": "logo.png",
+  "platform": [
+    "darwin"
+  ],
+  "version": "0.0.1",
+  "features": [
+    {
+      "code": "History",
+      "explain": "JetBrains历史项目",
+      "cmds": [
+        "History"
+      ]
+    }
+  ]
+}
