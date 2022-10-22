@@ -1,6 +1,6 @@
 const fs = require("fs");
 const { execFile } = require("child_process");
-const softwares = require("./softwares");
+const softwares = require("./mac/softwares");
 
 utools.onPluginReady(() => {});
 

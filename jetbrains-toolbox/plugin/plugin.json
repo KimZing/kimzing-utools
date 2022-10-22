@@ -2,9 +2,9 @@
   "pluginName": "JetBrains Toolbox",
   "description": "通过JetBrains Toolbox打开历史项目",
   "author": "kimzing",
-  "homepage": "http://kimzing.com",
-  "preload": "src/preload.js",
-  "logo": "logo.png",
+  "homepage": "http://www.kimzing.com",
+  "preload": "preload.js",
+  "logo": "base/logo/logo.png",
   "platform": [
     "darwin"
   ],
