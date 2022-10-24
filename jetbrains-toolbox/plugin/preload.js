@@ -1,4 +1,4 @@
-const {execFile} = require("child_process");
+const {exec} = require("child_process");
 const {getMacHistory} = require("./mac/history")
 const {getWinHistory} = require("./win/history")
 
@@ -38,12 +38,8 @@ let History = {
 
         select: (action, itemData) => {
             utools.hideMainWindow();
-            execFile(
-                itemData.exec,
-                [itemData.description],
-                (err) => {
-                    if (err) utools.showNotification("不是有效的可执行程序");
-                }
+            exec(
+                itemData.exec + " " +[itemData.description]
             );
             utools.outPlugin();
         },
