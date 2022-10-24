@@ -1,12 +1,12 @@
 {
   "pluginName": "JetBrains Toolbox",
-  "description": "通过JetBrains Toolbox打开历史项目",
+  "description": "打开通过JetBrains Toolbox安装的IDE的历史项目",
   "author": "kimzing",
   "homepage": "http://www.kimzing.com",
   "preload": "preload.js",
   "logo": "base/logo/logo.png",
   "platform": [
-    "darwin"
+    "darwin","win32"
   ],
   "version": "1.0.0",
   "features": [
@@ -14,7 +14,7 @@
       "code": "History",
       "explain": "JetBrains历史项目",
       "cmds": [
-        "History"
+        "History","JetBrains","Toolbox"
       ]
     }
   ]
