@@ -1,18 +1,10 @@
 const {exec} = require("child_process");
-const {getMacHistory} = require("./mac/history")
-const {getWinHistory} = require("./win/history")
+const {getPlatformHistory} = require("./history")
 
-utools.onPluginReady(() => {
-});
+utools.onPluginReady(() => {});
 
 function getHistory(searchWord) {
-    let historys = []
-    if (utools.isMacOS()) {
-        historys = getMacHistory();
-    }
-    if (utools.isWindows()) {
-        historys = getWinHistory();
-    }
+    let historys = getPlatformHistory()
 
     if (!searchWord) {
         return historys;
