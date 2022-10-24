@@ -36,12 +36,14 @@ let History = {
             return callbackSetList(getHistory(searchWord));
         },
 
-        select: (action, itemData) => {
-            utools.hideMainWindow();
-            exec(
-                itemData.exec + " " +[itemData.description]
-            );
+        select: (action, item) => {
+            let command = `"${item.exec}" "${item.description}"`;
+            exec(command, (err) => {
+                if (err) utools.showNotification("不是有效的可执行程序");
+            });
+
             utools.outPlugin();
+            utools.hideMainWindow();
         },
     },
 };
