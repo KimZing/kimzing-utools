@@ -12,4 +12,6 @@
 2. [Feature]   添加更多IDE支持：AppCode CLion DataGrip GoLand IntelliJ IDEA MPS PhpStorm PyCharm Rider RubyMine Android Studio WebStorm
 3. [Refactor]  对项目结构进行了整理，便于多平台扩展
 
+## v1.0.2
 
+1. [Feature]   超级面板(JetBrains中打开)：使用已安装的IDE打开指定文件夹(项目)
