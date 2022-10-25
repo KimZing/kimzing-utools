@@ -9,9 +9,7 @@
 ## v1.0.1
 
 1. [Feature]   添加对windows平台的支持
-2. [Refactor]  对项目结构进行了整理，便于多平台扩展
+2. [Feature]   添加更多IDE支持：AppCode CLion DataGrip GoLand IntelliJ IDEA MPS PhpStorm PyCharm Rider RubyMine Android Studio WebStorm
+3. [Refactor]  对项目结构进行了整理，便于多平台扩展
 
-## v1.0.2 (当前版本)
-
-1. [Feature]   添加更多IDE支持：AppCode CLion DataGrip GoLand IntelliJ IDEA MPS PhpStorm PyCharm Rider RubyMine Android Studio WebStorm
 
