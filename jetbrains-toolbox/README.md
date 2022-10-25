@@ -21,14 +21,13 @@
 
 1. 支持自定义Toolbox的安装位置
 2. 支持非Toolbox安装的IDE
-3. 支持更多的IDE
 
 ## 注意事项
 
 1. 首次安装Toolbox后，需重启电脑，否则可能会导致该插件命令不生效
 2. 仅支持通过Toolbox安装的IDE，非Toolbox安装的IDE历史项目可以检索，但无法打开
 3. 如果安装了相同IDE的多个版本，则采用Toolbox中配置的默认IDE版本
-4. 目前仅支持IDEA、GoLand、DateGrip、WebStorm四中IDE
+4. 目前支持[AppCode CLion DataGrip GoLand IntelliJ IDEA MPS PhpStorm PyCharm Rider RubyMine Android Studio WebStorm]等IDE
 
 ## 参考项目
 
