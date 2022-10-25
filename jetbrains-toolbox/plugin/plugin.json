@@ -12,6 +12,7 @@
   "features": [
     {
       "code": "History",
+      "icon": "/base/logo/logo.png",
       "explain": "JetBrains历史项目",
       "cmds": [
         "History","JetBrains","Toolbox"
@@ -19,6 +20,7 @@
     },
     {
       "code": "Open",
+      "icon": "/base/logo/logo.png",
       "explain": "使用JetBrains IDE打开项目",
       "cmds": [
         {
