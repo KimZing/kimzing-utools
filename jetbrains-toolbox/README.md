@@ -11,6 +11,7 @@
 1. 支持Mac、Windows系统平台
 2. 内置默认配置信息，无需配置(须采用默认安装方式)
 3. 通过`["History","JetBrains","Toolbox"]`等关键字即可快速显示项目列表，选择项目即可使用对应IDE进行打开
+4. 支持[AppCode CLion DataGrip GoLand IntelliJ IDEA MPS PhpStorm PyCharm Rider RubyMine Android Studio WebStorm]等IDE
 
 ## 使用技巧
 
@@ -27,7 +28,6 @@
 1. 首次安装Toolbox后，需重启电脑，否则可能会导致该插件命令不生效
 2. 仅支持通过Toolbox安装的IDE，非Toolbox安装的IDE历史项目可以检索，但无法打开
 3. 如果安装了相同IDE的多个版本，则采用Toolbox中配置的默认IDE版本
-4. 目前支持[AppCode CLion DataGrip GoLand IntelliJ IDEA MPS PhpStorm PyCharm Rider RubyMine Android Studio WebStorm]等IDE
 
 ## 参考项目
 
