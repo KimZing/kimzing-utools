@@ -8,7 +8,7 @@ module.exports = {
             softwares = softwares.filter(s => fs.existsSync(s.macExec)).map(s => ({...s, title:s.name, description: s.macExec, exec: s.macExec}))
         }
         if (utools.isWindows()) {
-            softwares = softwares.filter(s => fs.existsSync(s.winExec)).map(s => ({...s, title:s.name, description: s.winExec, exec: s.winExec}))
+            softwares = softwares.filter(s => fs.existsSync(s.winExec + ".cmd")).map(s => ({...s, title:s.name, description: s.winExec, exec: s.winExec}))
         }
         return softwares
     }
