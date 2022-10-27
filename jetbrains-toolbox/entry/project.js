@@ -2,13 +2,12 @@ const {getProjectInfoList} = require("../conf/project");
 
 let projectList = []
 
+function initOrUpdateProjectList() {
+    projectList = getProjectInfoList()
+}
+
 // 根据关键字获取历史项目
 function getProjectList(searchWord) {
-    // 如果项目列表不存在, 则查找本地文件
-    if (!projectList || projectList.length === 0) {
-        projectList = getProjectInfoList()
-    }
-
     if (!searchWord) {
         return projectList;
     }
@@ -20,5 +19,5 @@ function getProjectList(searchWord) {
 }
 
 module.exports = {
-    getProjectList
+    initOrUpdateProjectList, getProjectList
 }

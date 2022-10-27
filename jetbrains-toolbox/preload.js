@@ -1,17 +1,23 @@
-const {getProjectList} = require("./entry/project");
+const {initOrUpdateProjectList, getProjectList} = require("./entry/project");
 const {execute} = require("./utils/shell");
-const {getInstalledIDEList} = require("./entry/open");
+const {initOrUpdateInstalledIDEList, getInstalledIDEList} = require("./entry/open");
 
-// 初始加载项目列表及IDE列表
-utools.onPluginEnter(({code, type, payload}) => {
-    getProjectList()
+// 初始加载项目列表及IDE列表, 插件声明周期中仅会调用一次
+utools.onPluginReady(() => {
+    initOrUpdateProjectList()
+    initOrUpdateInstalledIDEList()
 })
 
 let History = {
     mode: "list",
     args: {
+        // 每次进入插件都会调用
         enter: (action, callbackSetList) => {
             callbackSetList(getProjectList());
+            // 异步更新项目列表
+            setTimeout(() => {
+                initOrUpdateProjectList()
+            }, 5000);
         },
         search: (action, searchWord, callbackSetList) => {
             return callbackSetList(getProjectList(searchWord));
@@ -31,6 +37,10 @@ let Open = {
     args: {
         enter: (action, callbackSetList) => {
             callbackSetList(getInstalledIDEList());
+            // 异步更新IDE列表
+            setTimeout(() => {
+                initOrUpdateInstalledIDEList()
+            }, 5000);
         },
         search: (action, searchWord, callbackSetList) => {
             return callbackSetList(getInstalledIDEList(searchWord));

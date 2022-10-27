@@ -3,12 +3,11 @@ const {exists} = require("../utils/file");
 
 let installedIDEList = []
 
-function getInstalledIDEList(searchWord) {
-    // 如果项目列表不存在, 则查找本地文件
-    if (!installedIDEList || installedIDEList.length === 0) {
-        installedIDEList = getIDEList().filter(i => exists(i.exec))
-    }
+function initOrUpdateInstalledIDEList() {
+    installedIDEList = getIDEList().filter(i => exists(i.exec))
+}
 
+function getInstalledIDEList(searchWord) {
     if (!searchWord) {
         return installedIDEList;
     }
@@ -19,5 +18,5 @@ function getInstalledIDEList(searchWord) {
 }
 
 module.exports = {
-    getInstalledIDEList
+    initOrUpdateInstalledIDEList, getInstalledIDEList
 }
