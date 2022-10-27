@@ -1,18 +1,18 @@
 {
   "pluginName": "JetBrains Toolbox",
   "description": "打开通过JetBrains Toolbox安装的IDE的历史项目",
-  "author": "kimzing",
-  "homepage": "http://www.kimzing.com",
+  "author": "KimZing",
+  "homepage": "https://github.com/KimZing",
   "preload": "preload.js",
-  "logo": "base/logo/logo.png",
+  "logo": "./assets/logo/logo.png",
   "platform": [
     "darwin","win32"
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "features": [
     {
       "code": "History",
-      "icon": "/base/logo/logo.png",
+      "icon": "./assets/logo/logo.png",
       "explain": "JetBrains历史项目",
       "cmds": [
         "History","JetBrains","Toolbox"
@@ -20,8 +20,8 @@
     },
     {
       "code": "Open",
-      "icon": "/base/logo/logo.png",
-      "explain": "使用JetBrains IDE打开项目",
+      "icon": "./assets/logo/logo.png",
+      "explain": "在JetBrains IDE中打开项目文件夹",
       "cmds": [
         {
           "type": "files",
