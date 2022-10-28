@@ -1,20 +1,23 @@
-const {get, put} = require("../utils/db");
-
 const dbKey = utools.isMacOS() ? "mac:project" : "win:project"
 
-function initProjectOpenTime() {
-    let current = get(dbKey)
-    if (!current) {
-        put(dbKey, {}, null)
+function updateDBProjectOpenTime(projectName, timestamp) {
+    let result = utools.db.get(dbKey);
+    if (!result) {
+        result = {_id: dbKey, value: {}}
+    }
+    result.value[projectName] = timestamp
+    utools.db.put(result)
+}
+
+function getAllProjectOpenInfo() {
+    let result = utools.db.get(dbKey);
+    if (!result) {
+        return {}
+    } else {
+        return result.value
     }
 }
 
-function updateProjectOpenTime(projectName) {
-    let current = get(dbKey);
-    current.value[projectName] = new Date().valueOf()
-    put(dbKey, current.value, current._rev)
-}
-
 module.exports = {
-    initProjectOpenTime, updateProjectOpenTime, dbKey
+    updateDBProjectOpenTime, getAllProjectOpenInfo
 }

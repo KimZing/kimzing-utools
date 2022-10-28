@@ -1,13 +1,11 @@
-const {initOrUpdateProjectList, getProjectList} = require("./entry/project");
+const {initOrUpdateProjectList, getProjectList, updateProjectOpenTime} = require("./entry/project");
 const {execute} = require("./utils/shell");
 const {initOrUpdateInstalledIDEList, getInstalledIDEList} = require("./entry/open");
-const {updateProjectOpenTime, initProjectOpenTime} = require("./store/project");
 
 // 初始加载项目列表及IDE列表, 插件生命周期中仅会调用一次
 utools.onPluginReady(() => {
     initOrUpdateProjectList()
     initOrUpdateInstalledIDEList()
-    initProjectOpenTime()
 })
 
 let History = {
@@ -30,7 +28,6 @@ let History = {
             execute(command)
             // 更新项目打开时间，并更新项目列表以重新排序
             updateProjectOpenTime(item.name)
-            initOrUpdateProjectList()
             utools.outPlugin();
         },
         placeholder: "搜索项目"

@@ -1,8 +1,7 @@
 const {historyFile} = require("../const/consts");
 const {readFileContentToJson} = require("../utils/file");
 const {getIDEByCode} = require("./ide");
-const {get} = require("../utils/db");
-const {dbKey} = require("../store/project");
+const {getAllProjectOpenInfo} = require("../store/project");
 
 // 仅支持win与mac
 function getHistoryFile() {
@@ -18,7 +17,7 @@ function getProjectInfoList() {
     let file = getHistoryFile()
 
     let list = readFileContentToJson(file);
-    let openInfo = get(dbKey).value
+    let projectOpenInfo = getAllProjectOpenInfo()
     list.forEach((l) => {
         let ide = getIDEByCode(l.defaultOpenItem.application_id);
         projectInfoList.push({
@@ -28,11 +27,11 @@ function getProjectInfoList() {
             description: l.path,
             icon: ide.icon,
             exec: ide.exec,
-            open: openInfo[l.name] ? parseInt(openInfo[l.name]) : 0
+            open: projectOpenInfo[l.name] ? parseInt(projectOpenInfo[l.name]) : 0
         });
     });
     // 返回并按照打开时间排序
-    return projectInfoList.sort((x,y) => y.open - x.open);
+    return projectInfoList;
 }
 
 module.exports = {
