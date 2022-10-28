@@ -25,7 +25,7 @@
       "cmds": [
         {
           "type": "files",
-          "label": "JetBrains中打开",
+          "label": "JetBrains 中打开",
           "fileType": "directory",
           "minLength": 1
         }
