@@ -44,6 +44,13 @@ module.exports = {
             winExec: `${home}\\AppData\\Local\\JetBrains\\Toolbox\\scripts\\idea.cmd`
         },
         {
+            name: "IntelliJ IDEA",
+            code: "IDEA-U",
+            icon: "/assets/icons/intellij-idea.png",
+            macExec: `/Applications/IntelliJ IDEA.app/Contents/MacOS/idea`,
+            winExec: `${home}\\AppData\\Local\\JetBrains\\Toolbox\\scripts\\idea.cmd`
+        },
+        {
             name: "MPS",
             code: "MPS",
             icon: "/assets/icons/mps.png",
