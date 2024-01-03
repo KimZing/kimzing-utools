@@ -42,7 +42,8 @@ function getProjectInfoList() {
 
         list.forEach((l) => {
             // IDE ID 的JSON 标识
-            let ide = getIDEByCode(l.newOpenItems[0].toolId);
+            let toolId = l.newOpenItems[0].toolId ?? l.defaultOpenItem.application_id;
+            let ide = getIDEByCode(toolId);
             projectInfoList.push({
                 name: l.name,
                 title: l.name,
