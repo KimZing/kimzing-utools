@@ -39,8 +39,10 @@ function getProjectInfoList() {
     if (exists(file)) {
         let list = readFileContentToJson(file);
         let projectOpenInfo = getAllProjectOpenInfo()
+
         list.forEach((l) => {
-            let ide = getIDEByCode(l.defaultOpenItem.application_id);
+            // IDE ID 的JSON 标识
+            let ide = getIDEByCode(l.newOpenItems[0].toolId);
             projectInfoList.push({
                 name: l.name,
                 title: l.name,
@@ -50,6 +52,7 @@ function getProjectInfoList() {
                 exec: ide.exec,
                 open: projectOpenInfo[l.name] ? parseInt(projectOpenInfo[l.name]) : 0
             });
+
         });
         // 返回并按照打开时间排序
         return projectInfoList;
